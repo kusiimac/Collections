@@ -8,13 +8,23 @@ the respective animal name
 
  */
 fun main(){
-   val map = mutableMapOf("a" to "ant", "b" to "bee", "c" to "cat", "d" to "dog", "e" to "elephant")
+
+   val groupA = setOf("a", "b", "c", "d", "e" , "a", "g", "r", "f")
+   val groupB = setOf("ant", "bee", "elephant", "dog", "cat")
+   val map = mutableMapOf<String, String>()
+   for (i in groupA) {
+      for(j in groupB) {
+         if (i.first() == j.first()) {
+            map.put(i, j)
+         }
+      }
+   }
    map.put("h", "hyena")
    map.put("i", "impala")
    map.put("j", "jaguar")
    map.put("k", "kangaroo")
    map.put("l", "lion")
-   for (i in map){
-      println(i)
+   map.forEach(){
+      println(it)
    }
 }
