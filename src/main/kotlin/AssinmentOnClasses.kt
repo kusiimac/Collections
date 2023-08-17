@@ -1,12 +1,12 @@
-open class Color(var name:String, var symbol:String, var hexCode:String) {
+open class Color(var name:String = "", var symbol:String = "", var hexCode:String = "") {
     open fun colorAttributes() {
         var myColor = Color("White", "W", "#FFFFFF")
         val colorAtt = "${myColor.name} ${myColor.symbol} ${myColor.hexCode}"
-        colorAtt
+        println(colorAtt)
 
     }
 }
-class Rainbow:Color("","","") {
+class Rainbow:Color() {
 
     override fun colorAttributes() {
         super.colorAttributes()
