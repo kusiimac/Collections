@@ -1,14 +1,13 @@
 open class Color(var name:String = "", var symbol:String = "", var hexCode:String = "") {
-    open fun colorAttributes() {
-        var myColor = Color("White", "W", "#FFFFFF")
-        val colorAtt = "${myColor.name} ${myColor.symbol} ${myColor.hexCode}"
-        println(colorAtt)
+    open fun colorAttributes(): String {
+        val myColor = Color("White", "W", "#FFFFFF")
+        return "${myColor.name} ${myColor.symbol} ${myColor.hexCode}"
 
     }
 }
 class Rainbow:Color() {
 
-    override fun colorAttributes() {
+    override fun colorAttributes():String {
         super.colorAttributes()
         val red = Color("Red", "R", "#FF0000")
         val orange = Color("Orange", "O", "#FFA500")
@@ -18,7 +17,6 @@ class Rainbow:Color() {
         val indigo = Color("Indigo", "I", "#4B0082")
         val violet = Color("Violet", "V", "#7F00FF")
 
-
         println("${red.name} ${red.symbol} ${red.hexCode}")
         println("${orange.name} ${orange.symbol} ${orange.hexCode}")
         println("${yellow.name} ${yellow.symbol} ${yellow.hexCode}")
@@ -26,6 +24,9 @@ class Rainbow:Color() {
         println("${blue.name} ${blue.symbol} ${blue.hexCode}")
         println("${indigo.name} ${indigo.symbol} ${indigo.hexCode}")
         println("${violet.name} ${violet.symbol} ${violet.hexCode}")
+
+        return ("")
+
     }
 
 }
